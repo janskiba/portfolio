@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { AngularTypewriterEffectModule } from 'angular-typewriter-effect';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
+import { TypingEffectComponent } from './frontpage/typing-effect/typing-effect.component';
 
 @NgModule({
   declarations: [
@@ -15,13 +16,14 @@ import { FrontpageComponent } from './frontpage/frontpage.component';
     MenuComponent,
     AboutComponent,
     ContactComponent,
-    FrontpageComponent
+    FrontpageComponent,
+    TypingEffectComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-  ],
+    AngularTypewriterEffectModule],
   providers: [],
   bootstrap: [AppComponent]
 })

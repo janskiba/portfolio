@@ -1,0 +1,8 @@
+@import "/src/variables.scss";
+
+span {
+  display: block;
+  height: 3rem;
+  width: 2px;
+  background-color: $base-text-color;
+}

@@ -27,7 +27,6 @@ import { NONE_TYPE } from '@angular/compiler';
         animate('0.3s')
       ]),
     ]),
-
   ]
 })
 
