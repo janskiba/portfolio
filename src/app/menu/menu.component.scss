@@ -1,0 +1,105 @@
+@import "/src/variables.scss";
+
+:host {
+  position: relative;
+  display: block;
+  height: 80px;
+  padding-top: 1rem;
+
+  .navbar {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10% 0 5%;
+  }
+
+  .logo {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0);
+    justify-content: center;
+    z-index: 1;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    p {
+      font-size: 2.75rem;
+      color: $golden-color;
+      font-weight: bold;
+      transition: color 0.15s;
+    }
+
+    &:hover {
+      background-color: $golden-color;
+
+      p {
+        color: $dark-text-color;
+      }
+    }
+  }
+
+  .nav-icon {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    z-index: 2;
+    cursor: pointer;
+
+    span {
+      position: absolute;
+      display: block;
+      background: $base-text-color;
+      height: 2px;
+    }
+
+    span:nth-child(1) {
+      top: 0;
+      right: 0;
+      width: 1rem;
+    }
+
+    span:nth-child(2) {
+      top: 1rem;
+      right: 0;
+      width: 1.5rem;
+    }
+
+    span:nth-child(3) {
+      bottom: 0;
+      right: 0;
+      width: 2rem;
+    }
+  }
+}
+
+nav {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: radial-gradient(rgb(54, 54, 54), rgb(35, 35, 35));
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      margin-bottom: 2rem;
+      overflow: hidden;
+
+      a {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
