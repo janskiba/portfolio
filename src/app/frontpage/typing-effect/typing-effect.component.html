@@ -1,2 +1,8 @@
-<p>{{ text }}</p>
-<ngtypewriter [StringList]="textArray" [speed]="1000"></ngtypewriter>
+<div class="first-line">
+  <p>{{ typewriter_display[0] }}</p>
+  <span [@showHide]="cursor ? 'show' : 'hide'"></span>
+</div>
+<div class="second-line">
+  <p>{{ typewriter_display[1] }}</p>
+  <span class="none" [@showHide]="cursor ? 'show' : 'hide'"></span>
+</div>
