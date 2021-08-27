@@ -1,8 +1,24 @@
 @import "/src/variables.scss";
+:host {
+  display: flex;
+  flex-direction: column;
+  .first-line,
+  .second-line {
+    display: inline-flex;
 
-span {
-  display: block;
-  height: 3rem;
-  width: 2px;
-  background-color: $base-text-color;
+    p {
+      font-size: 2rem;
+    }
+
+    span {
+      display: block;
+      height: 2rem;
+      width: 2px;
+      background-color: $base-text-color;
+
+      &.none {
+        display: none;
+      }
+    }
+  }
 }
