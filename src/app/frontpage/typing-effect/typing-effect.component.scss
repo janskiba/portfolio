@@ -1,24 +1,47 @@
 @import "/src/variables.scss";
 :host {
+  position: absolute;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  top: 0;
+
   .first-line,
   .second-line {
     display: inline-flex;
-
-    p {
-      font-size: 2rem;
-    }
-
+    margin: 0 10%;
     span {
       display: block;
-      height: 2rem;
       width: 2px;
       background-color: $base-text-color;
 
       &.none {
         display: none;
       }
+    }
+  }
+
+  .first-line {
+    p {
+      font-size: 1.75rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    span {
+      height: 1.75rem;
+    }
+  }
+
+  .second-line {
+    p {
+      font-size: 1.35rem;
+    }
+
+    span {
+      height: 1.35rem;
     }
   }
 }
