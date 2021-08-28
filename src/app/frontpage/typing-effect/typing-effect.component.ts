@@ -7,6 +7,7 @@ import {
   transition,
   // ...
 } from '@angular/animations';
+import { InteropObservable, interval, Subscription, TimeInterval } from 'rxjs';
 @Component({
   selector: 'app-typing-effect',
   animations: [
@@ -33,19 +34,13 @@ export class TypingEffectComponent implements OnInit {
   constructor(private el: ElementRef) { }
 
   ngOnInit(): void {
-    this.animateCursor();
     this.startTyping(this.text[0], 0);
-  }
-
-  animateCursor() {
-    setInterval(() => {
-      this.cursor = !this.cursor;
-    }, 500);
   }
 
   //adds letter by letter characters from desired text to empty string every 100ms
   //starts with frist line passed as an argument in ngOnInit
   startTyping(text: string, index: number) {
+
     const typeLine = () => {
       const total_length = text.length;
       let current_length = this.typewriter_display[index].length;
@@ -54,30 +49,47 @@ export class TypingEffectComponent implements OnInit {
         this.typewriter_display[index] += text[current_length];
         setTimeout(() => { typeLine(); }, 100);
       } else {
-        if (this.text[0] == this.typewriter_display[0] && this.text[1] == this.typewriter_display[1]) {
-          //wait 2.5 sec and start over
-          setTimeout(() => {
-            //manage visibility of a cursor
-            this.el.nativeElement.querySelector(".second-line span").classList.add('none');
-            this.el.nativeElement.querySelector(".first-line span").classList.remove('none');
-
-            this.typewriter_display = ["", ""];
-            setTimeout(() => {
-              this.startTyping(this.text[0], 0);
-            }, 500);
-          }, 2000);
-        }
-        //when first line is done typing
-        else {
-          //manage visibility of a cursor
-          this.el.nativeElement.querySelector(".second-line span").classList.remove('none');
-          this.el.nativeElement.querySelector(".first-line span").classList.add('none');
-
-          // call the same function with second line passed as an argument
-          this.startTyping(this.text[1], 1);
-        }
+        this.manageTyping();
       }
     };
     typeLine();
+  }
+
+  manageTyping() {
+    //if arrays are equal clear 'typewriter_display' array and start typing again
+    //if not only first line is written so start typing second line
+    if (this.text[0] == this.typewriter_display[0] && this.text[1] == this.typewriter_display[1]) {
+
+      //interval of blinking cursor
+      const cursorInterval = setInterval(() => {
+        this.cursor = !this.cursor;
+      }, 400);
+
+      //wait start typing whole text again
+      setTimeout(() => {
+        //manage visibility of a cursor
+        this.el.nativeElement.querySelector(".second-line span").classList.add('none');
+        this.el.nativeElement.querySelector(".first-line span").classList.remove('none');
+
+        this.typewriter_display = ["", ""];
+
+        //stop cursor from blinking and set its visibility to true
+        clearInterval(cursorInterval);
+        this.cursor = true;
+
+        setTimeout(() => {
+          this.startTyping(this.text[0], 0);
+        }, 500);
+      }, 3000);
+    }
+    //when first line is done typing
+    else {
+      //manage visibility of a cursor
+      this.el.nativeElement.querySelector(".second-line span").classList.remove('none');
+      this.el.nativeElement.querySelector(".first-line span").classList.add('none');
+
+      // call the same function with second line passed as an argument
+      this.startTyping(this.text[1], 1);
+    }
   }
 }
