@@ -40,4 +40,31 @@
       height: 1.35rem;
     }
   }
+
+  @media (max-width: 365px) {
+    .first-line,
+    .second-line {
+      margin: 0;
+    }
+
+    .first-line {
+      p {
+        font-size: 1.5rem;
+      }
+
+      span {
+        height: 1.5em;
+      }
+    }
+
+    .second-line {
+      p {
+        font-size: 1rem;
+      }
+
+      span {
+        height: 1rem;
+      }
+    }
+  }
 }

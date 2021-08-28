@@ -22,22 +22,23 @@
     z-index: 2;
     width: 3.5rem;
     height: 3.5rem;
-    border-radius: 1rem;
+    // border-radius: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s;
 
     p {
       font-size: 2.75rem;
       color: $golden-color;
       font-weight: bold;
-      transition: color 0.15s;
+      transition: 0.2s ease-in-out;
     }
 
     &:hover {
-      background-color: $golden-color;
+      //background-color: $golden-color;
 
       p {
-        color: $dark-text-color;
+        //color: $dark-text-color;
+        transform: scale(1.1);
+        filter: drop-shadow(3px 3px 0.1rem #9fa3a38e);
       }
     }
   }
