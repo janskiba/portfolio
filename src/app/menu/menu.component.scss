@@ -22,7 +22,6 @@
     z-index: 2;
     width: 3.5rem;
     height: 3.5rem;
-    // border-radius: 1rem;
     cursor: pointer;
 
     p {
@@ -33,10 +32,7 @@
     }
 
     &:hover {
-      //background-color: $golden-color;
-
       p {
-        //color: $dark-text-color;
         transform: scale(1.1);
         filter: drop-shadow(3px 3px 0.1rem #9fa3a38e);
       }
@@ -55,17 +51,11 @@
       display: block;
       background: $base-text-color;
       height: 2px;
-    }
-
-    span:nth-child(1) {
-      top: 0;
       right: 0;
-      width: 1rem;
     }
 
     span:nth-child(2) {
       top: 1rem;
-      right: 0;
       width: 1.5rem;
     }
 

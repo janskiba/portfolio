@@ -27,6 +27,53 @@ import { NONE_TYPE } from '@angular/compiler';
         animate('0.3s')
       ]),
     ]),
+
+    trigger('animateTop', [
+      state('hamburger', style({
+        'top': 0,
+        'width': '1rem',
+      })),
+      state('x', style({
+        'top': '22px',
+        'right': '0',
+        'width': '47px',
+        'transform': 'rotate(-45deg)',
+      })),
+      transition('hamburger <=> x', [
+        animate('0.3s')
+      ]),
+    ]),
+
+    trigger('animateCenter', [
+      state('hamburger', style({
+        'top': '1rem',
+        'width': '1.5rem',
+      })),
+      state('x', style({
+        'width': 0
+      })),
+      transition('hamburger <=> x', [
+        animate('0.3s')
+      ]),
+    ]),
+
+    trigger('animateBottom', [
+      state('hamburger', style({
+        'bottom': 0,
+        'width': '2rem',
+      })),
+      state('x', style({
+        'bottom': '15px',
+        'right': '0',
+        'width': '47px',
+        'transform': 'rotate(45deg)',
+      })),
+      transition('hamburger <=> x', [
+        animate('0.3s')
+      ]),
+    ]),
+
+
   ]
 })
 
