@@ -31,10 +31,12 @@
       transition: 0.2s ease-in-out;
     }
 
-    &:hover {
-      p {
-        transform: scale(1.1);
-        filter: drop-shadow(3px 3px 0.1rem #9fa3a38e);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        p {
+          transform: scale(1.1);
+          filter: drop-shadow(3px 3px 0.1rem #9fa3a38e);
+        }
       }
     }
   }

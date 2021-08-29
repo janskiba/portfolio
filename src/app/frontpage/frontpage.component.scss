@@ -26,10 +26,11 @@
         border-radius: 0.6rem;
         background: #2f2f2f;
         transition: 0.2s ease-in-out;
-
-        &:hover {
-          transform: scale(1.1);
-          filter: drop-shadow(0 0 0.3rem #e3e7e78e);
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 0.3rem #e3e7e78e);
+          }
         }
       }
     }
@@ -47,10 +48,11 @@
         width: auto;
         fill: $golden-color;
         transition: 0.2s ease-in-out;
-
-        &:hover {
-          transform: scale(1.1);
-          filter: drop-shadow(0 10px 2px #e3e7e78e);
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 10px 2px #e3e7e78e);
+          }
         }
       }
     }
