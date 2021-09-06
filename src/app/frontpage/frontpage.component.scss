@@ -42,12 +42,14 @@
       .arrow {
         position: relative;
         left: -50%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       }
       svg {
         height: 2.35rem;
         width: auto;
         fill: $golden-color;
         transition: 0.2s ease-in-out;
+
         @media (hover: hover) and (pointer: fine) {
           &:hover {
             transform: scale(1.1);
