@@ -1,0 +1,50 @@
+@import "../../variables.scss";
+
+:host {
+  display: block;
+  padding: 2rem 7%;
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  p {
+    line-height: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  img {
+    height: 200px;
+    width: auto;
+    display: block;
+    border-radius: 50%;
+    margin: 2rem auto;
+  }
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+
+    .cv-button {
+      display: inline-flex;
+      width: 300px;
+      height: 3rem;
+      margin: auto;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $golden-color;
+      border-radius: 1rem;
+
+      a {
+        svg {
+          height: 2.35rem;
+          width: auto;
+          fill: $golden-color;
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}

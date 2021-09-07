@@ -1,1 +1,26 @@
-<p>menu works!</p>
+<div class="navbar">
+  <div class="logo">
+    <p>j</p>
+  </div>
+  <div class="nav-icon" (click)="changeNavState()">
+    <span [@animateTop]="isOpen ? 'x' : 'hamburger'"></span>
+    <span [@animateCenter]="isOpen ? 'x' : 'hamburger'"></span>
+    <span [@animateBottom]="isOpen ? 'x' : 'hamburger'"></span>
+  </div>
+</div>
+<nav [@openClose]="isOpen ? 'open' : 'closed'">
+  <ul>
+    <li>
+      <a href="">home</a>
+    </li>
+    <li>
+      <a href="">about</a>
+    </li>
+    <li>
+      <a href="">portfolio</a>
+    </li>
+    <li>
+      <a href="">contact</a>
+    </li>
+  </ul>
+</nav>

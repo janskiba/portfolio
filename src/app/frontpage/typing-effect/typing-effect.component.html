@@ -1,0 +1,8 @@
+<div class="first-line">
+  <p>&nbsp;{{ typewriter_display[0] }}</p>
+  <span [@showHide]="cursor ? 'show' : 'hide'"></span>
+</div>
+<div class="second-line">
+  <p>&nbsp;{{ typewriter_display[1] }}</p>
+  <span class="none" [@showHide]="cursor ? 'show' : 'hide'"></span>
+</div>

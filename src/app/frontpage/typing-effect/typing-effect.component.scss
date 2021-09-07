@@ -1,0 +1,70 @@
+@import "/src/variables.scss";
+:host {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  .first-line,
+  .second-line {
+    display: inline-flex;
+    margin: 0 5%;
+
+    span {
+      display: block;
+      width: 2px;
+      background-color: $base-text-color;
+
+      &.none {
+        display: none;
+      }
+    }
+  }
+
+  .first-line {
+    p {
+      font-size: 1.75rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    span {
+      height: 1.75rem;
+    }
+  }
+
+  .second-line {
+    p {
+      font-size: 1.35rem;
+    }
+
+    span {
+      height: 1.35rem;
+    }
+  }
+
+  @media (max-width: 365px) {
+    .first-line,
+    .second-line {
+      margin: 0;
+    }
+
+    .first-line {
+      p {
+        font-size: 1.5rem;
+      }
+
+      span {
+        height: 1.5em;
+      }
+    }
+
+    .second-line {
+      p {
+        font-size: 1rem;
+      }
+
+      span {
+        height: 1rem;
+      }
+    }
+  }
+}
