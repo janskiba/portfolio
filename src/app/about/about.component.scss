@@ -2,48 +2,69 @@
 
 :host {
   display: block;
-  padding: 2rem 7%;
+  margin: 4rem 7%;
 
-  h2 {
-    font-size: 1.5rem;
-    text-align: center;
-  }
+  .about {
+    h2 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
 
-  p {
-    line-height: 1.5rem;
-    font-size: 1.1rem;
-  }
+    p {
+      line-height: 1.5rem;
+      font-size: 1.1rem;
+    }
 
-  img {
-    height: 200px;
-    width: auto;
-    display: block;
-    border-radius: 50%;
-    margin: 2rem auto;
-  }
-  .container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 1.5rem;
-
-    .cv-button {
-      display: inline-flex;
-      width: 300px;
-      height: 3rem;
-      margin: auto;
-      align-items: center;
+    img {
+      height: 200px;
+      width: auto;
+      display: block;
+      border-radius: 50%;
+      margin: 2rem auto;
+    }
+    a {
+      width: 100%;
+      display: flex;
       justify-content: center;
-      border: 1px solid $golden-color;
-      border-radius: 1rem;
+      margin-top: 1.5rem;
 
-      a {
+      .cv-button {
+        display: inline-flex;
+        max-width: 300px;
+        width: 100%;
+        height: 3rem;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $golden-color;
+        border-radius: 1rem;
+
         svg {
           height: 2.35rem;
           width: auto;
           fill: $golden-color;
           margin-right: 1rem;
         }
+      }
+    }
+  }
+
+  .skills {
+    margin-top: 3rem;
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(140px, 200px));
+      gap: 8px 10px;
+      padding: 0px;
+      margin: 1rem 0 0;
+      overflow: hidden;
+
+      li:before {
+        content: "▹";
       }
     }
   }
