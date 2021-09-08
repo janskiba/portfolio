@@ -51,20 +51,27 @@
 
   .skills {
     margin-top: 3rem;
-    h3 {
-      font-size: 1.2rem;
-    }
+    display: flex;
+    justify-content: center;
+    .container {
+      h3 {
+        font-size: 1.2rem;
+      }
 
-    ul {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(140px, 200px));
-      gap: 8px 10px;
-      padding: 0px;
-      margin: 1rem 0 0;
-      overflow: hidden;
+      ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(140px, 200px));
+        gap: 8px 10px;
+        padding: 0px;
+        margin: 1rem 0 0;
 
-      li:before {
-        content: "▹";
+        @media (max-width: 310px) {
+          grid-template-columns: none;
+        }
+
+        li:before {
+          content: "▹";
+        }
       }
     }
   }
