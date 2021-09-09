@@ -9,6 +9,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
 import { TypingEffectComponent } from './frontpage/typing-effect/typing-effect.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { ProjectComponent } from './portfolio/project/project.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { TypingEffectComponent } from './frontpage/typing-effect/typing-effect.c
     AboutComponent,
     ContactComponent,
     FrontpageComponent,
-    TypingEffectComponent
+    TypingEffectComponent,
+    PortfolioComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
