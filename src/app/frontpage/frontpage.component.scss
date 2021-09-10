@@ -9,14 +9,23 @@
 
   .content {
     position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 100%;
     width: 100%;
     top: 0;
 
     .icons-container {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       margin-left: 5%;
       svg {
@@ -26,11 +35,16 @@
         margin-right: 1rem;
         border-radius: 0.6rem;
         background: #2f2f2f;
+        -webkit-transition: 0.2s ease-in-out;
+        -o-transition: 0.2s ease-in-out;
         transition: 0.2s ease-in-out;
         @media (hover: hover) and (pointer: fine) {
           &:hover {
-            transform: scale(1.1);
-            filter: drop-shadow(0 0 0.3rem #e3e7e78e);
+            -webkit-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                    transform: scale(1.1);
+            -webkit-filter: drop-shadow(0 0 0.3rem #e3e7e78e);
+                    filter: drop-shadow(0 0 0.3rem #e3e7e78e);
           }
         }
       }
@@ -49,12 +63,17 @@
         height: 2.35rem;
         width: auto;
         fill: $golden-color;
+        -webkit-transition: 0.2s ease-in-out;
+        -o-transition: 0.2s ease-in-out;
         transition: 0.2s ease-in-out;
 
         @media (hover: hover) and (pointer: fine) {
           &:hover {
-            transform: scale(1.1);
-            filter: drop-shadow(0 10px 2px #e3e7e78e);
+            -webkit-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                    transform: scale(1.1);
+            -webkit-filter: drop-shadow(0 10px 2px #e3e7e78e);
+                    filter: drop-shadow(0 10px 2px #e3e7e78e);
           }
         }
       }

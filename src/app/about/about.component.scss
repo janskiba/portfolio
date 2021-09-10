@@ -24,32 +24,44 @@
       border-radius: 50%;
       margin: 2rem auto;
     }
-    a {
+    .button-container {
       width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      justify-content: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
       margin-top: 1.5rem;
-
-      .cv-button {
-        display: inline-flex;
+      a {
         max-width: 250px;
         width: 100%;
-        height: 3rem;
-        margin: auto;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid $golden-color;
-        border-radius: 1rem;
+        .cv-button {
+          display: -webkit-inline-box;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          max-width: 250px;
+          width: 100%;
+          height: 3rem;
+          margin: auto;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          border: 1px solid $golden-color;
+          border-radius: 1rem;
+          svg {
+            height: 2.35rem;
+            width: auto;
+            fill: $golden-color;
+            margin-right: 1rem;
+          }
 
-        svg {
-          height: 2.35rem;
-          width: auto;
-          fill: $golden-color;
-          margin-right: 1rem;
-        }
-
-        p {
-          color: #f2e5b9;
+          p {
+            color: #f2e5b9;
+          }
         }
       }
     }
@@ -57,8 +69,12 @@
 
   .skills {
     margin-top: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     .container {
       h3 {
         font-size: 1.2rem;
