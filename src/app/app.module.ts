@@ -11,6 +11,7 @@ import { FrontpageComponent } from './frontpage/frontpage.component';
 import { TypingEffectComponent } from './frontpage/typing-effect/typing-effect.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ProjectComponent } from './portfolio/project/project.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ProjectComponent } from './portfolio/project/project.component';
     FrontpageComponent,
     TypingEffectComponent,
     PortfolioComponent,
-    ProjectComponent
+    ProjectComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

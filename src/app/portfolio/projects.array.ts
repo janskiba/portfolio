@@ -15,13 +15,13 @@ export const projects: Project[] = [
   },
   {
     title: 'budgetApp',
-    description: 'Budget monitoring application built with Angular and Firebase.',
+    description: 'Budget monitoring application built with Angular and Firebase which allow users to register to the app with Google account and save todos in the Cloud Firestore database.',
     githubLink: 'https://github.com/janskiba/budget-app',
     webpageLink: 'https://budgetapp-54b74.web.app/'
   },
   {
     title: 'prestashop-theme',
-    description: 'Minimalistic theme for prestashop.',
+    description: 'Minimalistic theme for prestashop built from PrestaShop Classic Theme with use of jquery, smarty and scss.',
     githubLink: 'https://github.com/janskiba/prestashop-theme',
     webpageLink: 'https://janskiba.pl/'
   },

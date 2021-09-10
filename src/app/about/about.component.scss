@@ -16,8 +16,10 @@
     }
 
     img {
-      height: 200px;
-      width: auto;
+      max-height: 200px;
+      max-width: 200px;
+      height: 100%;
+      width: 100%;
       display: block;
       border-radius: 50%;
       margin: 2rem auto;
@@ -30,7 +32,7 @@
 
       .cv-button {
         display: inline-flex;
-        max-width: 300px;
+        max-width: 250px;
         width: 100%;
         height: 3rem;
         margin: auto;
@@ -44,6 +46,10 @@
           width: auto;
           fill: $golden-color;
           margin-right: 1rem;
+        }
+
+        p {
+          color: #f2e5b9;
         }
       }
     }
@@ -71,6 +77,7 @@
 
         li:before {
           content: "▹";
+          color: $golden-color;
         }
       }
     }

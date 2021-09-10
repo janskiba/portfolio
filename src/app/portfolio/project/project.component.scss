@@ -1,0 +1,24 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff0f;
+  border-radius: 21px;
+  margin: 1rem 0;
+  .project {
+    padding: 5%;
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.7rem;
+    }
+    p {
+      margin-bottom: 0.7rem;
+      line-height: 1.2rem;
+    }
+
+    .project_links {
+      a {
+        margin-right: 0.8rem;
+      }
+    }
+  }
+}
