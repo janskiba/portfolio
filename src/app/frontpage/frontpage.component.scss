@@ -80,9 +80,16 @@
       }
     }
 
-    @media (max-width: 365px) {
+    @media (max-width: 401px) {
       .icons-container {
         margin: 0;
+      }
+    }
+
+    @media (max-width: 365px) {
+      .icons-container {
+        margin: -10px;
+
         svg {
           height: 2rem;
         }

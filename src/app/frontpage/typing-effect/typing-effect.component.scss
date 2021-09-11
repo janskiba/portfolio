@@ -5,8 +5,8 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   margin-bottom: 1.5rem;
   .first-line,
   .second-line {
@@ -48,10 +48,17 @@
     }
   }
 
-  @media (max-width: 365px) {
+  @media (max-width: 401px) {
     .first-line,
     .second-line {
       margin: 0;
+    }
+  }
+
+  @media (max-width: 365px) {
+    .first-line,
+    .second-line {
+      margin: -10px;
     }
 
     .first-line {
