@@ -30,4 +30,11 @@ export class FrontpageComponent implements OnInit {
       this.lastKnownScrollPosition = window.scrollY;
     });
   }
+
+  scroll() {
+    const about = document.getElementById('about');
+    about?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+
+
+  }
 }
