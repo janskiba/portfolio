@@ -1,10 +1,32 @@
 @import "../../variables.scss";
 
 :host {
-  position: relative;
+  position: fixed;
   display: block;
+  top: 0;
+  left: 0;
   height: 70px;
-  padding-top: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0 3.7rem;
+  z-index: 2;
+  background-color: #232323d4;
+  -webkit-box-shadow: 0 10px 30px -10px #000000b3;
+          box-shadow: 0 10px 30px -10px #000000b3;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+
+  &.nav-up {
+    top: -100px;
+  }
+
+  &.on-top {
+    background-color: #00000000;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
 
   .navbar {
     position: relative;
@@ -13,15 +35,15 @@
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    padding: 0 10% 0 5%;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0 10% 0 3%;
   }
 
   .logo {
@@ -30,8 +52,8 @@
     display: flex;
     background-color: rgba(255, 255, 255, 0);
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     z-index: 2;
     width: 3.5rem;
     height: 3.5rem;
@@ -51,10 +73,10 @@
       &:hover {
         p {
           -webkit-transform: scale(1.1);
-              -ms-transform: scale(1.1);
-                  transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          transform: scale(1.1);
           -webkit-filter: drop-shadow(3px 3px 0.1rem #9fa3a38e);
-                  filter: drop-shadow(3px 3px 0.1rem #9fa3a38e);
+          filter: drop-shadow(3px 3px 0.1rem #9fa3a38e);
         }
       }
     }
@@ -97,18 +119,18 @@ nav {
   z-index: 1;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   top: 0;
   left: 0;
   width: 100vw;
-  background: $background-color;
+  background-color: $dark-background;
 
   ul {
     display: -webkit-box;
@@ -116,14 +138,14 @@ nav {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 
     li {
       margin-bottom: 2rem;

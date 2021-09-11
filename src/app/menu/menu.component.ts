@@ -6,7 +6,6 @@ import {
   animate,
   transition,
 } from '@angular/animations';
-import { NONE_TYPE } from '@angular/compiler';
 
 @Component({
   selector: 'app-menu',
@@ -81,6 +80,12 @@ export class MenuComponent implements OnInit {
   //informs if mobile menu is open
   isOpen = false;
 
+  navLinks: Link[] = [
+    { href: '#home', name: 'home' },
+    { href: '#about', name: 'about' },
+    { href: '#portfolio', name: 'portfolio' },
+    { href: '#contact', name: 'contact' }];
+
   constructor() { }
 
   ngOnInit(): void {
@@ -91,4 +96,9 @@ export class MenuComponent implements OnInit {
     this.isOpen = !this.isOpen;
   }
 
+}
+
+interface Link {
+  href: string,
+  name: string;
 }
