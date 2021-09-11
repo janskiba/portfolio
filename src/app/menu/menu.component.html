@@ -5,9 +5,9 @@
     </div></a
   >
   <div class="nav-icon" (click)="changeNavState()">
-    <span [@animateTop]="isOpen ? 'x' : 'hamburger'"></span>
-    <span [@animateCenter]="isOpen ? 'x' : 'hamburger'"></span>
-    <span [@animateBottom]="isOpen ? 'x' : 'hamburger'"></span>
+    <span [ngClass]="isOpen ? 'menu-open' : ''"></span>
+    <span [ngClass]="isOpen ? 'menu-open' : ''"></span>
+    <span [ngClass]="isOpen ? 'menu-open' : ''"></span>
   </div>
 </div>
 <nav [@openClose]="isOpen ? 'open' : 'closed'">
