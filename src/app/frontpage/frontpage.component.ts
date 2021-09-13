@@ -14,7 +14,9 @@ export class FrontpageComponent implements OnInit {
   lastKnownScrollPosition: number = 0;
 
   ngOnInit() {
-    this.startFadeInAnimation = true;
+    setTimeout(() => {
+      this.startFadeInAnimation = true;
+    }, 100);
 
     const nav = document.querySelector('.menu');
 
