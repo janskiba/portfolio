@@ -1,9 +1,20 @@
-<app-menu class="menu on-top"></app-menu>
+<app-menu
+  class="menu on-top"
+  [ngClass]="startFadeInAnimation ? 'fade-in' : ''"
+></app-menu>
 <div class="content">
-  <app-typing-effect></app-typing-effect>
+  <app-typing-effect
+    class="typing-effect"
+    [ngClass]="startFadeInAnimation ? 'fade-in' : ''"
+  ></app-typing-effect>
   <div class="icons-container">
     &nbsp;
-    <a href="https://github.com/janskiba/" class="github" target="_blank">
+    <a
+      href="https://github.com/janskiba/"
+      class="github"
+      target="_blank"
+      [ngClass]="startFadeInAnimation ? 'fade-in' : ''"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -19,6 +30,7 @@
       href="https://linkedin.com/in/jan-skiba-780369208"
       class="linkedin"
       target="_blank"
+      [ngClass]="startFadeInAnimation ? 'fade-in' : ''"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +44,10 @@
       </svg>
     </a>
   </div>
-  <div class="arrow-container">
+  <div
+    class="arrow-container"
+    [ngClass]="startFadeInAnimation ? 'fade-in' : ''"
+  >
     <svg
       width="24"
       height="24"

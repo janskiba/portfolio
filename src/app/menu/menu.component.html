@@ -12,7 +12,7 @@
 </div>
 <nav [@openClose]="isOpen ? 'open' : 'closed'">
   <ul>
-    <li *ngFor="let link of navLinks" (click)="changeNavState()">
+    <li *ngFor="let link of navLinks" (click)="handleNav()">
       <a href="{{ link.href }}"> {{ link.name }} </a>
     </li>
   </ul>

@@ -3,7 +3,8 @@
 :host {
   position: fixed;
   display: block;
-  top: 0;
+  opacity: 0;
+  top: 50px;
   left: 0;
   height: 70px;
   width: 100%;
@@ -12,11 +13,16 @@
   background-color: #232323d4;
   -webkit-box-shadow: 0 10px 30px -10px #000000b3;
   box-shadow: 0 10px 30px -10px #000000b3;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+
+  &.fade-in {
+    opacity: 1;
+    top: 0;
+  }
 
   &.nav-up {
     top: -100px;

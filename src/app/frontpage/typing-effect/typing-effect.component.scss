@@ -3,11 +3,32 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  opacity: 0;
+  padding-top: 50px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
   margin-bottom: 1.5rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+
+  -webkit-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  transform: translateY(30px);
+
+  &.fade-in {
+    opacity: 1;
+    padding-top: 0;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
   .first-line,
   .second-line {
     display: -webkit-inline-box;

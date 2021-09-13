@@ -55,6 +55,9 @@ export class MenuComponent implements OnInit {
     { href: '#portfolio', name: 'portfolio' },
     { href: '#contact', name: 'contact' }];
 
+  nav = document.querySelector('.menu');
+  body = document.querySelector('body');
+
   constructor() { }
 
   ngOnInit(): void {
@@ -63,9 +66,16 @@ export class MenuComponent implements OnInit {
   // open/close nav
   changeNavState() {
     this.isOpen = !this.isOpen;
-    document.querySelector('body')?.classList.toggle('hidden');
+    this.body?.classList.toggle('hidden');
   }
 
+  handleNav() {
+    this.changeNavState();
+    //hide nav to prevent coverup of a section title
+    setTimeout(() => {
+      this.nav?.classList.add('nav-up');
+    }, 400);
+  }
 }
 
 interface Link {

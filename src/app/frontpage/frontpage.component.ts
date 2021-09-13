@@ -9,9 +9,13 @@ export class FrontpageComponent implements OnInit {
 
   constructor() { }
 
+  startFadeInAnimation: boolean = false;
+
   lastKnownScrollPosition: number = 0;
 
   ngOnInit() {
+    this.startFadeInAnimation = true;
+
     const nav = document.querySelector('.menu');
 
     document.addEventListener('scroll', (e) => {
@@ -34,7 +38,5 @@ export class FrontpageComponent implements OnInit {
   scroll() {
     const about = document.getElementById('about');
     about?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-
-
   }
 }
