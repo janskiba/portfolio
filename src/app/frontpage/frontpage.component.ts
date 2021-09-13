@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, AfterViewInit } from '@angular/core';
+import { FadeInElementsAnimationService } from '../fade-in-elements-animation.service';
 
 @Component({
   selector: 'app-frontpage',
@@ -7,20 +8,35 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 })
 export class FrontpageComponent implements OnInit {
 
-  constructor() { }
+  elementsToAnimate: any[] = [
+
+  ];
+
+
+  constructor(private fadeInElementsAnimationService: FadeInElementsAnimationService) { }
 
   startFadeInAnimation: boolean = false;
 
   lastKnownScrollPosition: number = 0;
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit() {
     setTimeout(() => {
       this.startFadeInAnimation = true;
     }, 100);
-
     const nav = document.querySelector('.menu');
 
+    this.elementsToAnimate = [
+      document.getElementById('about'),
+      document.getElementById('portfolio'),
+      document.getElementById('contact')
+    ];
+
     document.addEventListener('scroll', (e) => {
+      this.fadeInElementsAnimationService.isInViewport(this.elementsToAnimate);
+
       if (window.scrollY !== 0)
         nav?.classList.remove('on-top');
       else {
