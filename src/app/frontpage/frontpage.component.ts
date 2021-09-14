@@ -58,7 +58,7 @@ export class FrontpageComponent implements OnInit {
 
   scroll() {
     const about = document.getElementById('about');
-    about?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+    about?.scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
   }
 
   isOpenMenu(isOpen: boolean) {
