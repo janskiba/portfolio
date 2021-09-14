@@ -18,10 +18,36 @@
       overflow: hidden;
     }
 
+    //global color for titles and some links
+    h2,
+    h3,
+    .project a,
+    #contact a {
+      color: $primary-title-color;
+    }
+
     a,
     li {
       text-decoration: none;
       list-style: none;
+    }
+
+    //fade-in animations
+    .to-fade-in {
+      -webkit-transform: translateY(75px);
+      -ms-transform: translateY(75px);
+      transform: translateY(75px);
+      opacity: 0;
+      -webkit-transition: 0.5s ease-in-out;
+      -o-transition: 0.5s ease-in-out;
+      transition: 0.5s ease-in-out;
+
+      &.faded-in {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
   }
 }

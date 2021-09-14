@@ -64,7 +64,6 @@
     width: 3.5rem;
     height: 3.5rem;
     cursor: pointer;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
     p {
       font-size: 2.75rem;
@@ -94,17 +93,17 @@
     height: 2rem;
     z-index: 2;
     cursor: pointer;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
     span {
       position: absolute;
       display: block;
       background: $base-text-color;
-      height: 2px;
+      height: 3px;
       right: 0;
       -webkit-transition: 0.3s ease-in-out;
       -o-transition: 0.3s ease-in-out;
       transition: 0.3s ease-in-out;
+      color: $primary-title-color;
     }
 
     span:nth-child(1) {
@@ -112,12 +111,10 @@
       width: 1rem;
 
       &.menu-open {
-        top: 22px;
-        right: 0px;
         width: 47px;
-        -webkit-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-        transform: rotate(-45deg);
+        -webkit-transform: translateY(18.5px) rotate(-45deg);
+        -ms-transform: translateY(18.5px) rotate(-45deg);
+        transform: translateY(18.5px) rotate(-45deg);
       }
     }
 
@@ -135,12 +132,10 @@
       width: 2rem;
 
       &.menu-open {
-        bottom: 15px;
-        right: 0px;
         width: 47px;
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        transform: rotate(45deg);
+        -webkit-transform: translateY(-18.5px) rotate(45deg);
+        -ms-transform: translateY(-18.5px) rotate(45deg);
+        transform: translateY(-18.5px) rotate(45deg);
       }
     }
   }

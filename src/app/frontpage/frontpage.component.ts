@@ -8,9 +8,7 @@ import { FadeInElementsAnimationService } from '../fade-in-elements-animation.se
 })
 export class FrontpageComponent implements OnInit {
 
-  elementsToAnimate: any[] = [
-
-  ];
+  elementsToAnimate!: NodeListOf<Element>;
 
 
   constructor(private fadeInElementsAnimationService: FadeInElementsAnimationService) { }
@@ -31,11 +29,8 @@ export class FrontpageComponent implements OnInit {
     }, 100);
     const nav = document.querySelector('.menu');
 
-    this.elementsToAnimate = [
-      document.getElementById('about'),
-      document.getElementById('portfolio'),
-      document.getElementById('contact')
-    ];
+    this.elementsToAnimate = document.querySelectorAll('.to-fade-in');
+    console.log(this.elementsToAnimate);
 
     document.addEventListener('scroll', (e) => {
       this.fadeInElementsAnimationService.isInViewport(this.elementsToAnimate);
