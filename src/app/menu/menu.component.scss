@@ -165,7 +165,16 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
+  height: 0;
   background-color: $dark-background;
+
+  &.open {
+    height: 100vh;
+
+    ul {
+      height: 100%;
+    }
+  }
 
   ul {
     display: -webkit-box;
@@ -181,7 +190,7 @@ nav {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    //height: 0;
+    height: 0;
 
     li {
       margin-bottom: 2rem;

@@ -1,6 +1,7 @@
 <app-menu
   class="menu on-top"
   [ngClass]="startFadeInAnimation ? 'fade-in' : ''"
+  (isOpenEmitter)="isOpenMenu($event)"
 ></app-menu>
 <div class="content">
   <app-typing-effect

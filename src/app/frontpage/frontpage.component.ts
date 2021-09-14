@@ -19,6 +19,9 @@ export class FrontpageComponent implements OnInit {
 
   lastKnownScrollPosition: number = 0;
 
+  //infroms parent component if menu os open to prevent hiding navbar on open menu
+  isOpenMenuEvent!: boolean;
+
   ngOnInit() {
   }
 
@@ -43,7 +46,7 @@ export class FrontpageComponent implements OnInit {
         nav?.classList.add('on-top');
       }
 
-      if (this.lastKnownScrollPosition < window.scrollY) {
+      if (!this.isOpenMenuEvent && this.lastKnownScrollPosition < window.scrollY) {
         nav?.classList.add('nav-up');
       }
       else {
@@ -56,5 +59,9 @@ export class FrontpageComponent implements OnInit {
   scroll() {
     const about = document.getElementById('about');
     about?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+  }
+
+  isOpenMenu(isOpen: boolean) {
+    this.isOpenMenuEvent = isOpen;
   }
 }

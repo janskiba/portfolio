@@ -1,53 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-} from '@angular/animations';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
-  animations: [
-    //nav slide in from top to bottom
-    trigger('openClose', [
-      state('open', style({
-        'height': '100vh',
-        'opacity': 1,
-      })),
-      state('closed', style({
-        'height': 0,
-        'opacity': 0,
-      })),
-      transition('open <=> closed', [
-        animate('0.3s')
-      ]),
-    ]),
-
-    trigger('animateTop', [
-      state('hamburger', style({
-        'top': 0,
-        'width': '1rem',
-      })),
-      state('x', style({
-        'top': '22px',
-        'right': '0',
-        'width': '47px',
-        'transform': 'rotate(-45deg)',
-      })),
-      transition('hamburger <=> x', [
-        animate('0.3s')
-      ]),
-    ]),
-  ]
 })
 
 export class MenuComponent implements OnInit {
+
+  //infroms parent component if menu os open to prevent hiding navbar on open menu
+  @Output() isOpenEmitter = new EventEmitter<boolean>();
+
   //informs if mobile menu is open
-  isOpen = false;
+  isOpen: boolean = false;
 
   navLinks: Link[] = [
     { href: '#home', name: 'home' },
@@ -67,14 +32,16 @@ export class MenuComponent implements OnInit {
   changeNavState() {
     this.isOpen = !this.isOpen;
     this.body?.classList.toggle('hidden');
+    this.isOpenEmitter.emit(this.isOpen);
   }
 
-  handleNav() {
+  handleNav(linkName: string) {
     this.changeNavState();
     //hide nav to prevent coverup of a section title
-    setTimeout(() => {
-      this.nav?.classList.add('nav-up');
-    }, 400);
+    if (linkName !== 'home')
+      setTimeout(() => {
+        this.nav?.classList.add('nav-up');
+      }, 400);
   }
 }
 
