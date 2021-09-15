@@ -3,11 +3,8 @@ import {
   trigger,
   state,
   style,
-  animate,
-  transition,
-  // ...
 } from '@angular/animations';
-import { InteropObservable, interval, Subscription, TimeInterval } from 'rxjs';
+import { ViewportWidthService } from 'src/app/viewport-width.service';
 @Component({
   selector: 'app-typing-effect',
   animations: [
@@ -24,6 +21,8 @@ import { InteropObservable, interval, Subscription, TimeInterval } from 'rxjs';
   styleUrls: ['./typing-effect.component.scss'],
 })
 export class TypingEffectComponent implements OnInit {
+  //state of screen size
+  isSmallScreen: boolean = false;
 
   //blinking of cursor
   cursor: boolean = true;
@@ -31,14 +30,24 @@ export class TypingEffectComponent implements OnInit {
   text: string[] = ["hi, i'm jan,", "a frontend developer"];
   typewriter_display: string[] = ["", ""];
 
-  constructor(private el: ElementRef) { }
+  constructor(private el: ElementRef, private viewportWidthService: ViewportWidthService
+  ) { }
 
   ngOnInit(): void {
+    //observe width of the vewport and change state if is width <= 997px
+    this.viewportWidthService.monitorWidth().subscribe(result => {
+      if (result.matches) {
+        this.isSmallScreen = true;
+        console.log(this.isSmallScreen);
+      } else {
+        this.isSmallScreen = false;
+      }
+    });
     this.startTyping(this.text[0], 0);
   }
 
-  //adds letter by letter characters from desired text to empty string every 100ms
-  //starts with frist line passed as an argument in ngOnInit
+  // adds letter by letter characters from desired text to empty string every 100ms
+  // starts with frist line passed as an argument in ngOnInit
   startTyping(text: string, index: number) {
 
     const typeLine = () => {

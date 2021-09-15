@@ -3,13 +3,12 @@
   [ngClass]="startFadeInAnimation ? 'fade-in' : ''"
   (isOpenEmitter)="isOpenMenu($event)"
 ></app-menu>
-<div class="content">
+<div [ngClass]="isSmallScreen ? '' : 'desktop'" class="content">
   <app-typing-effect
     class="typing-effect"
     [ngClass]="startFadeInAnimation ? 'fade-in' : ''"
   ></app-typing-effect>
   <div class="icons-container">
-    &nbsp;
     <a
       href="https://github.com/janskiba/"
       class="github"

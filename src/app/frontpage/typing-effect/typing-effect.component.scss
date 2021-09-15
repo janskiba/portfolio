@@ -29,77 +29,102 @@
     transform: translateY(0);
   }
 
-  .first-line,
-  .second-line {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    margin: 0 5%;
+  .container {
+    display: flex;
+    flex-direction: column;
 
-    span {
-      display: block;
-      width: 2px;
-      background-color: $base-text-color;
+    &.desktop {
+      width: 550px;
+      .first-line {
+        p {
+          font-size: 2.2rem;
+        }
+        span {
+          height: 2.4rem;
+          width: 3px;
+        }
+      }
 
-      &.none {
-        display: none;
+      .second-line {
+        margin-top: 1rem;
+
+        p {
+          font-size: 1.6rem;
+        }
+        span {
+          height: 1.7rem;
+          width: 3px;
+        }
       }
     }
-  }
 
-  .first-line {
-    p {
-      font-size: 1.75rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-      color: $primary-title-color;
-    }
-
-    span {
-      height: 1.75rem;
-    }
-  }
-
-  .second-line {
-    p {
-      font-size: 1.35rem;
-    }
-
-    span {
-      height: 1.35rem;
-    }
-  }
-
-  @media (max-width: 401px) {
     .first-line,
     .second-line {
-      margin: 0;
-    }
-  }
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      margin: 0 5%;
 
-  @media (max-width: 365px) {
-    .first-line,
-    .second-line {
-      margin: -10px;
+      span {
+        display: block;
+        width: 2px;
+        background-color: $base-text-color;
+
+        &.none {
+          display: none;
+        }
+      }
     }
 
     .first-line {
       p {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: $primary-title-color;
       }
 
       span {
-        height: 1.5em;
+        height: 1.75rem;
       }
     }
 
     .second-line {
       p {
-        font-size: 1rem;
+        font-size: 1.35rem;
       }
 
       span {
-        height: 1rem;
+        height: 1.35rem;
+      }
+    }
+
+    @media (max-width: 405px) {
+      .first-line,
+      .second-line {
+        margin: 0;
+      }
+    }
+
+    @media (max-width: 365px) {
+      .first-line {
+        p {
+          font-size: 1.5rem;
+        }
+
+        span {
+          height: 1.5em;
+        }
+      }
+
+      .second-line {
+        p {
+          font-size: 1rem;
+        }
+
+        span {
+          height: 1rem;
+        }
       }
     }
   }
