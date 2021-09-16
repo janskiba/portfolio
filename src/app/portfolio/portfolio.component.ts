@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Project } from './project.model';
-import { projects } from "./projects.array";
+import { projects, Project } from "./projects.array";
 
 @Component({
   selector: 'app-portfolio',
