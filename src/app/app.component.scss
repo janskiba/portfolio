@@ -1,20 +1,13 @@
 #about,
 #portfolio,
-#contact {
-  // -webkit-transform: translateY(75px);
-  // -ms-transform: translateY(75px);
-  // transform: translateY(75px);
-  // opacity: 0;
-  // -webkit-transition: 0.3s ease-in-out;
-  // -o-transition: 0.3s ease-in-out;
-  // transition: 0.3s ease-in-out;
-  margin: 8rem 0;
+#contact,
+footer {
+  display: block;
+  margin: 8rem auto;
   padding: 0 7%;
+  max-width: 1500px;
+}
 
-  // &.faded-in {
-  //   -webkit-transform: translateY(0);
-  //   -ms-transform: translateY(0);
-  //   transform: translateY(0);
-  //   opacity: 1;
-  // }
+footer {
+  margin-bottom: 0;
 }

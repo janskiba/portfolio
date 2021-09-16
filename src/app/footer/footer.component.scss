@@ -3,7 +3,6 @@
 :host {
   display: block;
   margin: auto;
-  width: 86%;
   padding-top: 1rem;
   background-color: #303030;
   border-top-left-radius: 20px;
@@ -21,11 +20,11 @@
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     a {
       margin: 0.5rem;
       svg {
