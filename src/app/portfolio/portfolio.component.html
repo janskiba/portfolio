@@ -1,0 +1,13 @@
+<div class="portfolio">
+  <div class="to-fade-in"><h2>some things i’ve built</h2></div>
+  <div class="projects-list">
+    <div *ngFor="let element of projectsArray">
+      <div class="to-fade-in">
+        <app-project
+          class="project-{{ element.class }}"
+          [project]="element"
+        ></app-project>
+      </div>
+    </div>
+  </div>
+</div>

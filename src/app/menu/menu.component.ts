@@ -1,94 +1,66 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-} from '@angular/animations';
-import { NONE_TYPE } from '@angular/compiler';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ViewportWidthService } from '../viewport-width.service';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
-  animations: [
-    //nav slide in from top to bottom
-    trigger('openClose', [
-      state('open', style({
-        'height': '100vh',
-        'opacity': 1,
-      })),
-      state('closed', style({
-        'height': 0,
-        'opacity': 0,
-      })),
-      transition('open <=> closed', [
-        animate('0.3s')
-      ]),
-    ]),
-
-    trigger('animateTop', [
-      state('hamburger', style({
-        'top': 0,
-        'width': '1rem',
-      })),
-      state('x', style({
-        'top': '22px',
-        'right': '0',
-        'width': '47px',
-        'transform': 'rotate(-45deg)',
-      })),
-      transition('hamburger <=> x', [
-        animate('0.3s')
-      ]),
-    ]),
-
-    trigger('animateCenter', [
-      state('hamburger', style({
-        'top': '1rem',
-        'width': '1.5rem',
-      })),
-      state('x', style({
-        'width': 0
-      })),
-      transition('hamburger <=> x', [
-        animate('0.3s')
-      ]),
-    ]),
-
-    trigger('animateBottom', [
-      state('hamburger', style({
-        'bottom': 0,
-        'width': '2rem',
-      })),
-      state('x', style({
-        'bottom': '15px',
-        'right': '0',
-        'width': '47px',
-        'transform': 'rotate(45deg)',
-      })),
-      transition('hamburger <=> x', [
-        animate('0.3s')
-      ]),
-    ]),
-
-
-  ]
 })
 
 export class MenuComponent implements OnInit {
-  //informs if mobile menu is open
-  isOpen = false;
 
-  constructor() { }
+  //infroms parent component if menu os open to prevent hiding navbar on open menu
+  @Output() isOpenEmitter = new EventEmitter<boolean>();
+
+  //informs if mobile menu is open
+  isOpen: boolean = false;
+
+  //state of screen size
+  isSmallScreen: boolean = false;
+
+  navLinks: Link[] = [
+    { href: '#home', name: 'home' },
+    { href: '#about', name: 'about' },
+    { href: '#portfolio', name: 'portfolio' },
+    { href: '#contact', name: 'contact' }];
+
+  nav = document.querySelector('.menu');
+  body = document.querySelector('body');
+
+  constructor(private viewportWidthService: ViewportWidthService) {
+  }
 
   ngOnInit(): void {
+    //observe width of the vewport and change state if is width <= 997px
+    this.viewportWidthService.monitorWidth().subscribe(result => {
+      if (result.matches) {
+        this.isSmallScreen = true;
+        console.log(this.isSmallScreen);
+      } else {
+        this.isSmallScreen = false;
+      }
+    });
   }
 
   // open/close nav
   changeNavState() {
     this.isOpen = !this.isOpen;
+    this.body?.classList.toggle('hidden');
+    this.isOpenEmitter.emit(this.isOpen);
   }
 
+  handleNav(linkName: string, isMobile: boolean) {
+    if (isMobile)
+      this.changeNavState();
+    //hide nav to prevent coverup of a section title
+    if (linkName !== 'home')
+      setTimeout(() => {
+        this.nav?.classList.add('nav-up');
+      }, 400);
+  }
+}
+
+interface Link {
+  href: string,
+  name: string;
 }

@@ -1,36 +1,90 @@
-@import "/src/variables.scss";
+@import "../../variables.scss";
 
 :host {
   position: relative;
   display: block;
   height: 100vh;
   width: 100%;
-  background: $background-color;
 
   .content {
     position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     height: 100%;
     width: 100%;
     top: 0;
+    padding: 0 5%;
+
+    &.desktop {
+      flex-direction: row-reverse;
+      align-items: center;
+
+      .icons-container {
+        flex-direction: column;
+        a {
+          margin-bottom: 1rem;
+          svg {
+            height: 2.3rem;
+          }
+        }
+      }
+    }
 
     .icons-container {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      margin-left: 5%;
-      svg {
-        height: 2.35rem;
-        width: auto;
-        fill: $golden-color;
-        margin-right: 1rem;
-        border-radius: 0.6rem;
-        background: #2f2f2f;
-        transition: 0.2s ease-in-out;
-        @media (hover: hover) and (pointer: fine) {
-          &:hover {
-            transform: scale(1.1);
-            filter: drop-shadow(0 0 0.3rem #e3e7e78e);
+      margin-left: calc(5% + 15px);
+
+      a {
+        opacity: 0;
+        -webkit-transition: 0.3s ease-in-out;
+        -o-transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out;
+        -webkit-transition-delay: 0.6s;
+        -o-transition-delay: 0.6s;
+        transition-delay: 0.6s;
+        -webkit-transform: translateY(30px);
+        -ms-transform: translateY(30px);
+        transform: translateY(30px);
+
+        &:nth-child(2) {
+          -webkit-transition-delay: 0.75s;
+          -o-transition-delay: 0.75s;
+          transition-delay: 0.75s;
+        }
+        &.fade-in {
+          opacity: 1;
+          -webkit-transform: translateY(0);
+          -ms-transform: translateY(0);
+          transform: translateY(0);
+        }
+        svg {
+          height: 2.35rem;
+          width: auto;
+          fill: $golden-color;
+          margin-right: 1rem;
+          border-radius: 0.6rem;
+          background: #2f2f2f;
+          -webkit-transition: 0.2s ease-in-out;
+          -o-transition: 0.2s ease-in-out;
+          transition: 0.2s ease-in-out;
+          @media (hover: hover) and (pointer: fine) {
+            &:hover {
+              -webkit-transform: scale(1.1);
+              -ms-transform: scale(1.1);
+              transform: scale(1.1);
+              -webkit-filter: drop-shadow(0 0 0.3rem #e3e7e78e);
+              filter: drop-shadow(0 0 0.3rem #e3e7e78e);
+            }
           }
         }
       }
@@ -40,29 +94,55 @@
       position: absolute;
       left: 50%;
       bottom: 2rem;
-      .arrow {
+      opacity: 0;
+      -webkit-transition: 0.3s ease-in-out;
+      -o-transition: 0.3s ease-in-out;
+      transition: 0.3s ease-in-out;
+      -webkit-transition-delay: 1s;
+      -o-transition-delay: 1s;
+      transition-delay: 1s;
+      -webkit-transform: translateY(30px);
+      -ms-transform: translateY(30px);
+      transform: translateY(30px);
+      &.fade-in {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+      }
+
+      svg {
         position: relative;
         left: -50%;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      }
-      svg {
+
         height: 2.35rem;
         width: auto;
+        cursor: pointer;
         fill: $golden-color;
+        -webkit-transition: 0.2s ease-in-out;
+        -o-transition: 0.2s ease-in-out;
         transition: 0.2s ease-in-out;
 
         @media (hover: hover) and (pointer: fine) {
           &:hover {
+            -webkit-transform: scale(1.1);
+            -ms-transform: scale(1.1);
             transform: scale(1.1);
+            -webkit-filter: drop-shadow(0 10px 2px #e3e7e78e);
             filter: drop-shadow(0 10px 2px #e3e7e78e);
           }
         }
       }
     }
 
+    @media (max-width: 405px) {
+      .icons-container {
+        margin: -10px 0 0 15px;
+      }
+    }
+
     @media (max-width: 365px) {
       .icons-container {
-        margin: 0;
         svg {
           height: 2rem;
         }

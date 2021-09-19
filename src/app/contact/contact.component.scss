@@ -1,0 +1,44 @@
+@import "../../variables.scss";
+:host {
+  display: block;
+  text-align: center;
+  padding-top: 1rem;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  p {
+    line-height: 1.2rem;
+    a {
+      text-decoration: underline;
+      word-break: break-all;
+    }
+  }
+
+  .email-button {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    max-width: 250px;
+    width: 100%;
+    height: 3rem;
+    margin: 1.5rem auto 0;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border: 1px solid $golden-color;
+    border-radius: 1rem;
+    transition: 0.1s ease-in-out;
+
+    &:hover {
+      background-color: $hover-button-color;
+    }
+    p {
+      color: #f2e5b9;
+    }
+  }
+}

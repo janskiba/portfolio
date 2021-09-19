@@ -1,69 +1,130 @@
-@import "/src/variables.scss";
+@import "../../../variables.scss";
 :host {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  opacity: 0;
+  padding-top: 50px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   margin-bottom: 1.5rem;
-  .first-line,
-  .second-line {
-    display: inline-flex;
-    margin: 0 5%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  transition-delay: 0.3s;
 
-    span {
-      display: block;
-      width: 2px;
-      background-color: $base-text-color;
+  -webkit-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  transform: translateY(30px);
 
-      &.none {
-        display: none;
+  &.fade-in {
+    opacity: 1;
+    padding-top: 0;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+
+    &.desktop {
+      width: 440px;
+      .first-line {
+        p {
+          font-size: 2rem;
+        }
+        span {
+          height: 2.2rem;
+          width: 3px;
+        }
+      }
+
+      .second-line {
+        margin-top: 1rem;
+
+        p {
+          font-size: 1.4rem;
+        }
+        span {
+          height: 1.5rem;
+          width: 3px;
+        }
       }
     }
-  }
 
-  .first-line {
-    p {
-      font-size: 1.75rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
-
-    span {
-      height: 1.75rem;
-    }
-  }
-
-  .second-line {
-    p {
-      font-size: 1.35rem;
-    }
-
-    span {
-      height: 1.35rem;
-    }
-  }
-
-  @media (max-width: 365px) {
     .first-line,
     .second-line {
-      margin: 0;
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      margin: 0 5%;
+
+      span {
+        display: block;
+        width: 2px;
+        background-color: $base-text-color;
+
+        &.none {
+          display: none;
+        }
+      }
     }
 
     .first-line {
       p {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: $primary-title-color;
       }
 
       span {
-        height: 1.5em;
+        height: 1.75rem;
       }
     }
 
     .second-line {
       p {
-        font-size: 1rem;
+        font-size: 1.35rem;
       }
 
       span {
-        height: 1rem;
+        height: 1.35rem;
+      }
+    }
+
+    @media (max-width: 405px) {
+      .first-line,
+      .second-line {
+        margin: 0;
+      }
+    }
+
+    @media (max-width: 365px) {
+      .first-line {
+        p {
+          font-size: 1.5rem;
+        }
+
+        span {
+          height: 1.5em;
+        }
+      }
+
+      .second-line {
+        p {
+          font-size: 1rem;
+        }
+
+        span {
+          height: 1rem;
+        }
       }
     }
   }

@@ -2,11 +2,7 @@
 $base-text-color: #e3e7e7;
 $dark-text-color: #333333;
 $golden-color: #b5ab8a;
-$background-color: linear-gradient(
-  180deg,
-  rgba(35, 35, 35, 1) 0%,
-  rgba(54, 54, 54, 1) 50%,
-  rgba(35, 35, 35, 1) 100%
-);
-
+$background-color: linear-gradient(#232323 0%, #363636 50%, #232323 100%);
 $dark-background: #232323;
+$primary-title-color: white;
+$hover-button-color: #b5ab8a42;

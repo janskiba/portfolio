@@ -1,26 +1,29 @@
 <div class="navbar">
-  <div class="logo">
-    <p>j</p>
+  <a href="#home">
+    <div class="logo">
+      <p>j</p>
+    </div></a
+  >
+
+  <div *ngIf="!isSmallScreen" class="nav-desktop">
+    <ul>
+      <li *ngFor="let link of navLinks" (click)="handleNav(link.name, false)">
+        <a href="{{ link.href }}"> {{ link.name }} </a>
+      </li>
+    </ul>
   </div>
-  <div class="nav-icon" (click)="changeNavState()">
-    <span [@animateTop]="isOpen ? 'x' : 'hamburger'"></span>
-    <span [@animateCenter]="isOpen ? 'x' : 'hamburger'"></span>
-    <span [@animateBottom]="isOpen ? 'x' : 'hamburger'"></span>
+
+  <div *ngIf="isSmallScreen" class="nav-icon" (click)="changeNavState()">
+    <span [ngClass]="isOpen ? 'menu-open' : ''"></span>
+    <span [ngClass]="isOpen ? 'menu-open' : ''"></span>
+    <span [ngClass]="isOpen ? 'menu-open' : ''"></span>
   </div>
 </div>
-<nav [@openClose]="isOpen ? 'open' : 'closed'">
+
+<nav [ngClass]="isOpen ? 'open' : 'closed'">
   <ul>
-    <li>
-      <a href="">home</a>
-    </li>
-    <li>
-      <a href="">about</a>
-    </li>
-    <li>
-      <a href="">portfolio</a>
-    </li>
-    <li>
-      <a href="">contact</a>
+    <li *ngFor="let link of navLinks" (click)="handleNav(link.name, true)">
+      <a href="{{ link.href }}"> {{ link.name }} </a>
     </li>
   </ul>
 </nav>

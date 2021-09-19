@@ -1,0 +1,37 @@
+@import "../../variables.scss";
+
+:host {
+  display: block;
+  margin: auto;
+  padding-top: 1rem;
+  background-color: #303030;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  p {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 0 7%;
+  }
+
+  .icons-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    a {
+      margin: 0.5rem;
+      svg {
+        fill: $golden-color;
+        width: 26px;
+        height: auto;
+      }
+    }
+  }
+}
