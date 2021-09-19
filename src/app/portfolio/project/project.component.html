@@ -1,4 +1,7 @@
-<div [ngClass]="isSmallScreen ? '' : 'desktop'">
+<div
+  [ngClass]="isSmallScreen ? '' : 'desktop'"
+  class="desktop-{{ project.class }}"
+>
   <div class="project">
     <h3>
       <a href="{{ project.githubLink }}" target="_blank">
@@ -44,6 +47,8 @@
     </div>
   </div>
   <div *ngIf="!isSmallScreen" class="container">
-    <img src="{{ project.img }}" alt="{{ project.title }}" />
+    <a href="{{ project.webpageLink }}" target="_blank">
+      <img src="{{ project.img }}" alt="{{ project.title }}"
+    /></a>
   </div>
 </div>

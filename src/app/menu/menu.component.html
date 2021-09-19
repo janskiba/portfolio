@@ -7,7 +7,7 @@
 
   <div *ngIf="!isSmallScreen" class="nav-desktop">
     <ul>
-      <li *ngFor="let link of navLinks">
+      <li *ngFor="let link of navLinks" (click)="handleNav(link.name, false)">
         <a href="{{ link.href }}"> {{ link.name }} </a>
       </li>
     </ul>
@@ -22,7 +22,7 @@
 
 <nav [ngClass]="isOpen ? 'open' : 'closed'">
   <ul>
-    <li *ngFor="let link of navLinks" (click)="handleNav(link.name)">
+    <li *ngFor="let link of navLinks" (click)="handleNav(link.name, true)">
       <a href="{{ link.href }}"> {{ link.name }} </a>
     </li>
   </ul>

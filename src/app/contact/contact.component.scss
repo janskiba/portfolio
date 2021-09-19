@@ -32,6 +32,11 @@
     justify-content: center;
     border: 1px solid $golden-color;
     border-radius: 1rem;
+    transition: 0.1s ease-in-out;
+
+    &:hover {
+      background-color: $hover-button-color;
+    }
     p {
       color: #f2e5b9;
     }

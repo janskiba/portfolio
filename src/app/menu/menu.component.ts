@@ -49,8 +49,9 @@ export class MenuComponent implements OnInit {
     this.isOpenEmitter.emit(this.isOpen);
   }
 
-  handleNav(linkName: string) {
-    this.changeNavState();
+  handleNav(linkName: string, isMobile: boolean) {
+    if (isMobile)
+      this.changeNavState();
     //hide nav to prevent coverup of a section title
     if (linkName !== 'home')
       setTimeout(() => {

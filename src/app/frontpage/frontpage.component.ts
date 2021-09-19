@@ -51,8 +51,9 @@ export class FrontpageComponent implements OnInit {
     document.addEventListener('scroll', (e) => {
       this.fadeInElementsAnimationService.isInViewport(this.elementsToAnimate);
 
-      if (window.scrollY !== 0)
+      if (window.scrollY !== 0) {
         nav?.classList.remove('on-top');
+      }
       else {
         nav?.classList.add('on-top');
       }

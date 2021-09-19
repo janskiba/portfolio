@@ -38,37 +38,27 @@
     }
     .button-container {
       width: 100%;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
       justify-content: center;
       margin-top: 1.5rem;
       a {
         max-width: 250px;
         width: 100%;
+
         .cv-button {
-          display: -webkit-inline-box;
-          display: -ms-inline-flexbox;
           display: inline-flex;
           max-width: 250px;
           width: 100%;
           height: 3rem;
           margin: auto;
-          -webkit-box-align: center;
-          -ms-flex-align: center;
           align-items: center;
-          -webkit-box-pack: center;
-          -ms-flex-pack: center;
           justify-content: center;
           border: 1px solid $golden-color;
           border-radius: 1rem;
-          svg {
-            height: 2.35rem;
-            width: auto;
-            fill: $golden-color;
-            margin-right: 1rem;
+          transition: 0.1s ease-in-out;
+
+          &:hover {
+            background-color: $hover-button-color;
           }
 
           p {
