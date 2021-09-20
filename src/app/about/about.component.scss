@@ -80,27 +80,34 @@
     .container {
       h3 {
         font-size: 1.2rem;
+        text-align: center;
       }
 
       ul {
         display: grid;
+        justify-content: center;
         grid-template-columns: repeat(2, minmax(140px, 140px));
         gap: 8px 10%;
         padding: 0px;
         margin: 1rem 0 0;
 
-        @media (max-width: 310px) {
-          grid-template-columns: none;
-        }
-
         @media (min-width: 998px) {
-          justify-content: center;
           gap: 8px 90px;
         }
 
         li:before {
           content: "▹";
           color: $golden-color;
+        }
+      }
+
+      @media (max-width: 310px) {
+        h3 {
+          text-align: left;
+        }
+        ul {
+          grid-template-columns: none;
+          justify-content: unset;
         }
       }
     }
