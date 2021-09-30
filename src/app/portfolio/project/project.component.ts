@@ -19,7 +19,7 @@ export class ProjectComponent implements OnInit {
     this.viewportWidthService.monitorWidth().subscribe(result => {
       if (result.matches) {
         this.isSmallScreen = true;
-        console.log(this.isSmallScreen);
+        (this.isSmallScreen);
       } else {
         this.isSmallScreen = false;
       }

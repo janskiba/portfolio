@@ -32,7 +32,7 @@ export class FrontpageComponent implements OnInit {
     this.viewportWidthService.monitorWidth().subscribe(result => {
       if (result.matches) {
         this.isSmallScreen = true;
-        console.log(this.isSmallScreen);
+        (this.isSmallScreen);
       } else {
         this.isSmallScreen = false;
       }
@@ -46,7 +46,7 @@ export class FrontpageComponent implements OnInit {
     const nav = document.querySelector('.menu');
 
     this.elementsToAnimate = document.querySelectorAll('.to-fade-in');
-    console.log(this.elementsToAnimate);
+    (this.elementsToAnimate);
 
     document.addEventListener('scroll', (e) => {
       this.fadeInElementsAnimationService.isInViewport(this.elementsToAnimate);

@@ -4,7 +4,7 @@
 >
   <div class="project">
     <h3>
-      <a href="{{ project.githubLink }}" target="_blank">
+      <a href="{{ project.githubLink }}" target="_blank" rel="noopener">
         {{ project.title }}</a
       >
     </h3>
@@ -12,7 +12,7 @@
       {{ project.description }}
     </p>
     <div class="project_links">
-      <a href="{{ project.githubLink }}" target="_blank">
+      <a href="{{ project.githubLink }}" target="_blank" rel="noopener">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="30"
@@ -28,7 +28,7 @@
         </svg>
       </a>
 
-      <a href="{{ project.webpageLink }}" target="_blank">
+      <a href="{{ project.webpageLink }}" target="_blank" rel="noopener">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="30"
@@ -47,7 +47,7 @@
     </div>
   </div>
   <div *ngIf="!isSmallScreen" class="container">
-    <a href="{{ project.webpageLink }}" target="_blank">
+    <a href="{{ project.webpageLink }}" target="_blank" rel="noopener">
       <img src="{{ project.img }}" alt="{{ project.title }}"
     /></a>
   </div>
