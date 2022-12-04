@@ -35,13 +35,5 @@ export const projects: Project[] = [
     class: 'left',
     img: `${baseImgHref}/budgetApp.png`
   },
-  {
-    title: 'prestashop-theme',
-    description: 'Minimalistic theme for prestashop built from PrestaShop Classic Theme with scss, jquery and smarty.',
-    githubLink: 'https://github.com/janskiba/prestashop-theme',
-    webpageLink: 'https://janskiba.pl/',
-    class: 'right',
-    img: `${baseImgHref}/presta.png`
-  },
 ];
 
